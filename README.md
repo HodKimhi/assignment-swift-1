@@ -1,15 +1,5 @@
 # Game of Apps Intern Interview
 
-Thanks for your interest in the Game of Apps developer intern position! This repo contains a list of tasks for you to do, so we can get a gauge of your skill and passion for development.
-
-You're expected to know the basics of the Git development workflow. If you don't know or you want a review, check out this [tutorial](https://www.raywenderlich.com/179717/open-source-collaboration-using-git-and-github).
-
-## Instructions
-
-The goal is to submit a pull request that accomplishes the following tasks. While the pull requests are public, don't blindly copy others. The follow up interview will involve questions on your submission.
-
-Fork this repository to begin.
-
 ## Challenge 1: Algorithms
 
 Your first challenge is to solve two algorithm questions. You'll be judged based on correctness, performance, and code readability.
@@ -61,6 +51,4 @@ Your second challenge is to develop a small app from scratch. Here are the requi
 
 ### Notes:
 
-- If you're a bit rusty on your iOS skills, check out this [tutorial](https://www.raywenderlich.com/160521/storyboards-tutorial-ios-11-part-1).
-
-- A good developer tries to write code that is easy to understand. The industry has a set of best practices that focus on writing easy to maintain code. Here's a set of guidelines on these best practices: [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide).
+The iOS application was built and tested on iOS 12 on either an iPhone XR or an iPhone 8
