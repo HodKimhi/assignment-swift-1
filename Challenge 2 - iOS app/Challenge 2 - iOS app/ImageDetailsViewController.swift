@@ -70,12 +70,12 @@ class ImageDetailsViewController: UIViewController, UITextViewDelegate {
         super.viewWillDisappear(animated)
         
         //person is just a local copy of the person we're viewing, so we find where they are in the array and replace the info parameter of the person object currently in the array with the new value.
-        if(person.role == "Developer")
+        if(person.role.lowercased() == "developer")
         {
             let index = developers.firstIndex(of: person)
             developers[index!].info = photoDescription.text!
         }
-        else if(person.role == "Designer")
+        else if(person.role.lowercased() == "designer")
         {
             let index = designers.firstIndex(of: person)
             designers[index!].info = photoDescription.text!

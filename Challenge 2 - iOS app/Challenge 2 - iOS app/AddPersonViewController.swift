@@ -10,6 +10,9 @@ import UIKit
 
 class AddPersonViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    //MARK: - Variables
+    let imagePicker: UIImagePickerController = UIImagePickerController()
+    
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -23,7 +26,8 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate, UITextView
     
     //MARK: - IBActions
     @IBAction func selectImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
+        dismissKeyboard()
+        
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -47,11 +51,11 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate, UITextView
             let image = photoView.image!
             
             let newPerson = Person(name: name, role: role, info: info, image: image)
-            if(newPerson.role == "Designer")
+            if(newPerson.role.lowercased() == "designer")
             {
                 designers.insert(newPerson, at: 0)
             }
-            else if(newPerson.role == "Developer")
+            else if(newPerson.role.lowercased() == "developer")
             {
                 developers.insert(newPerson, at: 0)
             }
@@ -69,10 +73,10 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        dismissKeyboard()
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - ViewController Delegates
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,6 +123,12 @@ class AddPersonViewController: UIViewController, UITextFieldDelegate, UITextView
         {
             nameTextField.becomeFirstResponder()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        dismissKeyboard()
     }
     
     @objc func dismissKeyboard()
